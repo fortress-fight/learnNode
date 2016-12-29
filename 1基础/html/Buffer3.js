@@ -26,4 +26,4 @@ console.log(buf)
 // <Buffer 61 62 63>
 
 var buf = buf1+buf2;
-console.log(buf)
+console.log(buf) //abcdcde

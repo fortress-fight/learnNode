@@ -1021,6 +1021,44 @@ body .markdown-body
 <p>每一个解析器（运行环境），允许js使用其提供的内置对象或者方法，去做一些事情，例如：浏览器（DOM操作）提供的document对象。在 nodejs 中提供的就是 fs || http 等</p>
 <h3 id="12-nodejs-javascript"><a name="user-content-12-nodejs-javascript" href="#12-nodejs-javascript" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.2 nodejs 和 JavaScript</h3>
 <p>JavaScript 只不过是 nodejs 的作者为了实现其思想，选择的一种编程语言；</p>
+<p>相同：都是基于ECMA语法<br />
+例如在node中：<br />
+<pre><code>    var a = 100;
+    console.log(a)
+    // 100
+
+    var b = new Date();
+    console.log(b)
+    //Mon Dec 26 2016 01:49:53 GMT+0800 (中国标准时间)
+
+    var c = [1,2,3,4]
+    c.push(5);
+    console.log(c)
+    // [ 1, 2, 3, 4, 5 ]
+
+    function Person (name) {
+        this.name = name
+    }
+    Person.prototype.say = function(){
+        console.log(this.name)
+    };
+
+    var p1 = new Person('person');
+    p1.say();
+    // person
+</code></pre></p>
+<p>不同：<br />
+1. js中的顶层对象是window，但是node中没有window，其顶层对象是global；（在js中也存在global，但是不允许访问）<br />
+2. 在js 中，通过在通过 var 声明的变量是挂在window对象上的，但是在node中，通过var声明的对象，仅仅是在其模块作用域中（一个模块就是一个作用域）</p>
+<p>例如：<br />
+<pre><code>var a = 100;
+console.log(a) // 100
+console.log(global.a) // undefined
+
+
+global.a = 200;
+console.log(global.a) // 200
+</code></pre></p>
 <h3 id="13-nodejs"><a name="user-content-13-nodejs" href="#13-nodejs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.3 配置nodejs</h3>
 <p>下载地址： <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
 <p>建议下载.msi 的版本，提供的npm等。</p>
@@ -1030,6 +1068,9 @@ body .markdown-body
 <p><a href="http://www.cnblogs.com/qiaojie/p/5560388.html">http://www.cnblogs.com/qiaojie/p/5560388.html</a></p>
 <p>的方式，进行修改；<br />
 如果需要使用node编译，ctrl + B,</p>
+<p>2）WS</p>
+<p>webStorm: <br />
+默认配置，右键运行</p>
 <h3 id="14"><a name="user-content-14" href="#14" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.4 运行</h3>
 <p>1》运行 nodejs 或者 win+r 输入node <br />
 2》命令行： win+r 加 cmd 输入 node， 退出 使用两次 ctrl + c</p>
@@ -1040,4 +1081,371 @@ dir &ndash; 目录</p>
 <p>node -v 查看版本</p>
 <p>运行文件，通过 node 路径 就可以运行<br />
 例如：node D:\soft\wamp\www\GitHub\learnNode\1基础\html\1node.js </p>
-<p>3》 编辑器中运行</p></article></body></html>
+<p>3》 编辑器中运行</p>
+<h2 id="2-node"><a name="user-content-2-node" href="#2-node" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. node 模块</h2>
+<p>如果需要写大量代码，一般会将代码分到几个js文件中，在node中每一个js文件就是一个模块，文件路径就是模块名</p>
+<p>在编写模块的时候，都有require || module || exports 单个预先定义好的变量；</p>
+<h3 id="21-require"><a name="user-content-21-require" href="#21-require" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.1 require</h3>
+<p>使用 require 方法， 在一个模块中加载另一个模块；</p>
+<p><code>require('address')</code><br />
+address &mdash; 相对路径 || 绝对路径</p>
+<blockquote>
+<p>注：<br />
+相对路径：必须以 ‘./路径’ 的格式引入，如果没有 ‘./’ 就会指向node核心模块，或者去加载node目录下的 node_modules 文件夹内部的文件<br />
+绝对路劲：以/或C:之类的盘符开头</p>
+</blockquote>
+<p>当需要查找一个文件的时候，node内部会遵循一定的方式去查找，以require(&lsquo;./2&rsquo;)为例</p>
+<blockquote>
+<ol>
+<li>查找文件名称为2的文件</li>
+<li>查找2.js文件</li>
+<li>查找2.json文件</li>
+<li>查找2.node文件</li>
+<li>报错</li>
+</ol>
+</blockquote>
+<p>一旦查找到文件，就直接结束查找，并返回</p>
+<h3 id="22-module-exports"><a name="user-content-22-module-exports" href="#22-module-exports" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.2 module 和 exports 模块</h3>
+<p>在node中一个模块就是一个作用域，如果模块1 想直接访问 模块2 的内容，是访问不到的；</p>
+<p>解决方法：<br />
+1. 使用将变量挂在顶层对象 global 下。<br />
+不建议使用，会增加全局变量</p>
+<ol>
+<li>使用 module 模块对象 &mdash; module是局部对象<br />
+在 module 中保存着当前模块的信息，会在require的时候，被返回；</li>
+</ol>
+<p>例如：<br />
+<pre><code>console.log(module)
+</code></pre></p>
+<p>输出：<br />
+<pre><code>Module {
+id: '.',
+exports: {},
+parent: null,
+filename: 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\html\\5module.js',
+loaded: false,
+children: [],
+paths: 
+[ 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\html\\node_modules',
+ 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\node_modules',
+ 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\node_modules',
+ 'D:\\soft\\wamp\\www\\GitHub\\node_modules',
+ 'D:\\soft\\wamp\\www\\node_modules',
+ 'D:\\soft\\wamp\\node_modules',
+ 'D:\\soft\\node_modules',
+ 'D:\\node_modules' ] }
+</code></pre></p>
+<p>可以将提供给外部去访问的元素，挂在module.exports下<br />
+例如：<br />
+<pre><code>console.log(module)
+var a = 100;
+module.exports.a = 100;
+console.log(module)
+</code></pre></p>
+<p>输出：<br />
+<pre><code>Module {
+  id: '.',
+  exports: { a: 100 },
+  parent: null,
+  filename: 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\html\\5module.js',
+  loaded: false,
+  children: [],
+  paths: 
+   [ 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\html\\node_modules',
+     'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\node_modules',
+     'D:\\soft\\wamp\\www\\GitHub\\learnNode\\node_modules',
+     'D:\\soft\\wamp\\www\\GitHub\\node_modules',
+     'D:\\soft\\wamp\\www\\node_modules',
+     'D:\\soft\\wamp\\node_modules',
+     'D:\\soft\\node_modules',
+     'D:\\node_modules' ] }
+</code></pre></p>
+<p>在局部模块中还存在属性&ndash;exports<br />
+exports === module.exports</p>
+<p>所以exports.a = 100 和 module.exports.a = 100 是相同的</p>
+<p>注：<br />
+不建议修改 module.exports ,如果修改了module.exports 就将破坏exports和module.exports的关联，对exports一样；</p>
+<h3 id="23"><a name="user-content-23" href="#23" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.3 其它</h3>
+<p>1) 模块初始化<br />
+一个模块中的JS代码仅在模块第一次被使用时执行一次，并在执行过程中初始化模块的导出对象。之后，缓存起来的导出对象被重复利用。</p>
+<p>实例：<br />
+文件1：<br />
+<pre><code>var count1 = require('./8.1module.js')
+var count2 = require('./8.1module.js')
+
+console.log(count1()) // 2
+console.log(count2()) // 3
+</code></pre></p>
+<p>文件2：<br />
+<pre><code>var i = 1;
+function count () {
+  i += 1;
+  return i;
+}
+
+module.exports = count;
+</code></pre></p>
+<p>2)主模块</p>
+<p>通过命令行参数传递给NodeJS以启动程序的模块被称为主模块。主模块负责调度组成整个程序的其它模块完成工作。</p>
+<p>例如:<br />
+通过以下命令启动程序时，main.js就是主模块。<br />
+<code>$ node main.js</code></p>
+<h2 id="3-global"><a name="user-content-3-global" href="#3-global" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. global对象</h2>
+<h3 id="31-__filename-__dirname"><a name="user-content-31-__filename-__dirname" href="#31-__filename-__dirname" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.1 __filename &amp; __dirname</h3>
+<p>属性：<br />
+1）__filename &ndash; 表示当前编译后的绝对路径<br />
+2）__dirname &ndash; 表示当前编译后的模块所在文件夹的绝对路径<br />
+3）ECMA对象</p>
+<p>示例：<br />
+<pre><code>console.log(__filename)
+// D:\soft\wamp\www\GitHub\learnNode\1基础\html\7global.js
+console.log(__dirname)
+// D:\soft\wamp\www\GitHub\learnNode\1基础\html
+</code></pre></p>
+<h3 id="32-process"><a name="user-content-32-process" href="#32-process" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.2 process 对象</h3>
+<p>process 对象属于global对象，通过这个对象可以返回与当前运行程序相关的信息；<br />
+可以通过<code>console.log(process)</code>来查看</p>
+<p>属性1：argv &ndash; 一组包含命令行参数的数组；</p>
+<pre><code>  C:\Users\dream&gt;node D:\soft\wamp\www\GitHub\learnNode\1基础\html\process_argv.js 1
+[ 'C:\\Program Files\\nodejs\\node.exe',
+  'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\html\\process_argv.js',
+  '1' ]
+</code></pre>
+
+<p>属性2：env &ndash; 环境信息</p>
+<p>属性3：pid &ndash; 信息值 // 可以在进程管理器中查看到pid</p>
+<p>属性4：title &ndash; 进程的名称</p>
+<pre><code>console.log(process.title)
+//C:\WINDOWS\system32\cmd.exe
+</code></pre>
+
+<p>属性5：arch &ndash; cpu 信息</p>
+<p>方法1：cwd() 返回当前进程的目录<br />
+<pre><code>var a = process.cwd()
+console.log(a)
+//D:\soft\wamp\www\GitHub\learnNode\1基础\html
+</code></pre></p>
+<p>方法2：chdir(directory) &ndash; 改变当前进程的目录</p>
+<pre><code>process.chdir('c:')
+var a = process.cwd();
+console.log(a)
+//C:\
+</code></pre>
+
+<p>方法3：memoryUsage() &ndash; 返回node进程占用的内存</p>
+<pre><code>var a = process.memoryUsage()
+console.log(a)
+
+// { rss: 15785984, heapTotal: 6910248, heapUsed: 2511084 }
+</code></pre>
+
+<p>方法4：exit(code)退出</p>
+<p>方法5：kill(pid) &ndash; 向进程发送信息</p>
+<p>方法6：stdin &amp; stdout 输入输出流</p>
+<p>1）<code>process.stdout.write('hello')</code> </p>
+<p>2）事件&ndash; <code>process.stdin.on('data', function(chunk){})</code><br />
+只有在输入完成后才会触发，一般认为回车是输入完成的标示，<br />
+chunk 是输入的内容</p>
+<pre><code>// process.stdout.write('hello')
+// hellow
+var a;
+var b;
+
+process.stdout.write('请输入a的值：');
+
+process.stdin.on('data', function(chunk) {
+
+    if (!a) {
+        a = Number(chunk);
+        process.stdout.write('请输入b的值：');
+    } else {
+        b = Number(chunk);
+
+        process.stdout.write( '结果是：' + (a + b) );
+    }
+
+});
+</code></pre>
+
+<h3 id="32-buffer"><a name="user-content-32-buffer" href="#32-buffer" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.2 Buffer 类</h3>
+<p>用于更好的操作2进制的数据流<br />
+注：Buffer 一旦实例出来就不能修改其长度</p>
+<p>1）new Buffer(size)<br />
+<pre><code>var a = new Buffer(4)
+console.log(a) //&lt;Buffer 00 00 00 00&gt;
+</code></pre></p>
+<p>返回由16进制构成的长度为4的信息；</p>
+<p>2）new Buffer(array)<br />
+<pre><code>var arr = new Buffer([1,2,3])
+console.log(arr) //&lt;Buffer 01 02 03&gt;
+</code></pre></p>
+<p>3）new Buffer(string, [encoding])<br />
+<pre><code>var str = new Buffer('abc', 'utf-8')
+console.log(str) //&lt;Buffer 61 62 63&gt;
+console.log(str.length) //3
+console.log(str[0]) //97
+console.log(String.fromCharCode(str[0])) 
+</code></pre></p>
+<p>注：一个中文站3个字节</p>
+<pre><code>var str1 = '哈哈哈';
+console.log(str1.length); // 3
+console.log(new Buffer(str1).length);//9
+</code></pre>
+
+<p>Buffer的方法：</p>
+<p>1） write</p>
+<p><code>buf.write(要写入的字符串, 从Buffer对象中的几位开始写入, 写入的字符串的长度, 写入的字符串的编码)</code></p>
+<pre><code>var str = 'abcdefg'
+console.log(new Buffer(str))
+var buf = new Buffer(3)
+
+buf.write(str)
+console.log(buf)
+//&lt;Buffer 61 62 63 64 65 66 67&gt;
+//&lt;Buffer 61 62 63&gt;
+</code></pre>
+
+<p>将str，以buf的长度重写</p>
+<pre><code>buf.write(str, 2)
+console.log(buf)
+// &lt;Buffer 61 62 63 64 65 66 67&gt;
+// &lt;Buffer a0 81 61&gt;
+</code></pre>
+
+<p>将str在buf的第二位开始写</p>
+<pre><code>
+buf.write(str,1,1)
+console.log(buf)
+// &lt;Buffer 61 62 63 64 65 66 67&gt;
+// &lt;Buffer 00 61 00&gt;
+</code></pre>
+
+<p>从buf的第一位开始写，写一位</p>
+<p>注：如果是中文的化，会将其先转化成3个字节，在计算位置</p>
+<pre><code>var str = '哈哈哈';
+console.log(new Buffer(str))
+//&lt;Buffer e5 93 88 e5 93 88 e5 93 88&gt;
+
+var wr = new Buffer(5)
+wr.write(str, 1)
+console.log(wr)
+// &lt;Buffer 66 e5 93 88 01&gt;
+</code></pre>
+
+<p>2）toString</p>
+<p><code>buf.toString('编码格式', 起始位置, 结束位置)</code></p>
+<pre><code>var str = 'abcd哈哈哈'
+var buf = new Buffer(str);
+console.log(buf) //&lt;Buffer 61 62 63 64 e5 93 88 e5 93 88 e5 93 88&gt;
+console.log(buf.toString()) //abcd哈哈哈
+console.log(buf.toString('utf8', '1'))//bcd哈哈哈
+console.log(buf.toString('utf8', 5))//��哈哈（因为将中文的三个字节截掉了一个）
+</code></pre>
+
+<p>3）toJSON</p>
+<pre><code>var str = 'abcd'
+var buf = new Buffer(str)
+console.log(buf.toJSON())
+//{ type: 'Buffer', data: [ 97, 98, 99, 100 ] }
+</code></pre>
+
+<p>4）slice<br />
+<code>buf.slice('起始位置', '结束位置')</code></p>
+<pre><code>var str = 'abcdef'
+var buf = new Buffer(str);
+console.log(buf)//&lt;Buffer 61 62 63 64 65 66&gt;
+var bufSon = buf.slice(1, 4)
+console.log(bufSon)//&lt;Buffer 62 63 64&gt;
+</code></pre>
+
+<p>5)copy</p>
+<p><code>Buffer.copy(targetBuffer, [targetStart], [sourceStart], [sourceEnd]);</code><br />
+相对来说并没有直接的直接拷贝副本的方法，只能新建一个长度相等的Buffer，然后在原Buffer上调用copy方法，参数中还可以设置copy的启事与结束位置等。</p>
+<pre><code>var buf = new Buffer('str');
+var b = buf;
+var bufSon = new Buffer(b.length)
+buf.copy(bufSon)
+// &lt;Buffer 73 74 72&gt;
+console.log(bufSon)
+</code></pre>
+
+<p>buf &ndash; 母体 bufSon &ndash; 子体，字体要母体上copy，需要母体调用copy方法，第一个参数指定子体，而子体要指定和母体相同的长度</p>
+<h3 id="3-buffer"><a name="user-content-3-buffer" href="#3-buffer" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Buffer 方法</h3>
+<p>1）Buffer.isEncoding(encodeing)<br />
+检测Buffer是否支持encoding<br />
+//console.log( Buffer.isEncoding(&lsquo;utf-8&rsquo;) ); // true</p>
+<p>2）Buffer.isBuffer(obj)<br />
+检测obj是否是Buffer对象<br />
+<pre><code>var arr = [1,2,3];
+var bf = new Buffer(10);
+
+console.log( Buffer.isBuffer(arr) );//false
+console.log( Buffer.isBuffer(bf) );//true
+
+</code></pre></p>
+<p>3）Buffer.byteLength(str1,[encoding])</p>
+<p>返回真实的字节长度，默认为utf8的格式下的长度<br />
+<pre><code>var str = 'avbd'
+console.log(Buffer.byteLength(str)) //4
+</code></pre></p>
+<p>4）Buffer.concat()</p>
+<pre><code>var buf1 = new Buffer('abcd');
+console.log(buf1)
+// &lt;Buffer 61 62 63 64&gt;
+var buf2 = new Buffer('cde');
+console.log(buf2)
+// &lt;Buffer 63 64 65&gt;
+var buf = Buffer.concat([buf1, buf2])
+console.log(buf)
+// &lt;Buffer 61 62 63 64 63 64 65&gt;
+var buf = Buffer.concat([buf1, buf2],3)
+console.log(buf)
+// &lt;Buffer 61 62 63&gt;
+</code></pre>
+
+<p>注：在node中 + 号，同样进行了隐式类型转换,实际上是调用了toString的方法</p>
+<pre><code>var buf = buf1+buf2;
+console.log(buf) //abcdcde
+</code></pre>
+
+<h3 id="34-filesystem-fs"><a name="user-content-34-filesystem-fs" href="#34-filesystem-fs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.4 FileSystem &ndash; fs模块</h3>
+<p>注：fs模块下的方法，都有同步和异步两种，参数基本相同，只是同步使用回调确保执行顺序，通过没有回调</p>
+<p>用于处理文件或者是文件夹</p>
+<p>1) fs.open() || fs.openSync() 打开一个文件</p>
+<p>语法：<br />
+<pre><code>fs.open(path, flags, [mode], function(args){
+  // body
+})
+fs.openSync(path, flags, [mode])
+</code></pre></p>
+<p><pre><code>var fs = require('fs');
+fs.open('1.txt', 'r', function(){
+  console.log(arguments)
+})
+//{ '0': null, '1': 3 }
+</code></pre><br />
+回调中第一个参数是error信息，第二个参数是fd：文件标示，也就是说3就代表这这个文件</p>
+<p>2) fs.read() || fs.readSync() &ndash; 读取文件</p>
+<p>语法：<br />
+<pre><code>fs.read(fd, buffer, offset, length, position, function(args){
+  // body
+})
+</code></pre></p>
+<p>fd：文件标示，<br />
+buffer：buffer对象<br />
+offset：如果由A向B输出，那么offset就是在B中其实位置</p>
+<pre><code>
+fs.open('1.txt', 'r', function(err, fd){
+  var str = new Buffer('123456789')
+  console.log(str)
+  fs.read(fd, str, 0, 1, null, function(args){
+    console.log(arguments)
+//&lt;Buffer 31 32 33 34 35 36 37 38 39&gt;
+// { '0': null, '1': 1, '2': &lt;Buffer 61 32 33 34 35 36 37 38 39&gt; }
+// [Finished in 0.2s]
+
+  })
+})
+</code></pre>
+
+<p>将一个新的数组添加在</p></article></body></html>
