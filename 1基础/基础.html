@@ -1064,23 +1064,23 @@ console.log(global.a) // 200
 <p>建议下载.msi 的版本，提供的npm等。</p>
 <p>配置编辑器：</p>
 <p>1）sublime:</p>
-<p>在sublime 中安装 nodejs插件，然后按照 </p>
+<p>在sublime 中安装 nodejs插件，然后按照</p>
 <p><a href="http://www.cnblogs.com/qiaojie/p/5560388.html">http://www.cnblogs.com/qiaojie/p/5560388.html</a></p>
 <p>的方式，进行修改；<br />
 如果需要使用node编译，ctrl + B,</p>
 <p>2）WS</p>
-<p>webStorm: <br />
+<p>webStorm:<br />
 默认配置，右键运行</p>
 <h3 id="14"><a name="user-content-14" href="#14" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.4 运行</h3>
-<p>1》运行 nodejs 或者 win+r 输入node <br />
+<p>1》运行 nodejs 或者 win+r 输入node<br />
 2》命令行： win+r 加 cmd 输入 node， 退出 使用两次 ctrl + c</p>
-<p>常用命令行： <br />
+<p>常用命令行：<br />
 cls &ndash; 清屏<br />
 cd &ndash; 路径<br />
 dir &ndash; 目录</p>
 <p>node -v 查看版本</p>
 <p>运行文件，通过 node 路径 就可以运行<br />
-例如：node D:\soft\wamp\www\GitHub\learnNode\1基础\html\1node.js </p>
+例如：node D:\soft\wamp\www\GitHub\learnNode\1基础\html\1node.js</p>
 <p>3》 编辑器中运行</p>
 <h2 id="2-node"><a name="user-content-2-node" href="#2-node" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. node 模块</h2>
 <p>如果需要写大量代码，一般会将代码分到几个js文件中，在node中每一个js文件就是一个模块，文件路径就是模块名</p>
@@ -1125,7 +1125,7 @@ parent: null,
 filename: 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\html\\5module.js',
 loaded: false,
 children: [],
-paths: 
+paths:
 [ 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\html\\node_modules',
  'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\node_modules',
  'D:\\soft\\wamp\\www\\GitHub\\learnNode\\node_modules',
@@ -1150,7 +1150,7 @@ console.log(module)
   filename: 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\html\\5module.js',
   loaded: false,
   children: [],
-  paths: 
+  paths:
    [ 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\html\\node_modules',
      'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\node_modules',
      'D:\\soft\\wamp\\www\\GitHub\\learnNode\\node_modules',
@@ -1191,17 +1191,18 @@ module.exports = count;
 通过以下命令启动程序时，main.js就是主模块。<br />
 <code>$ node main.js</code></p>
 <h2 id="3-global"><a name="user-content-3-global" href="#3-global" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. global对象</h2>
-<h3 id="31-__filename-__dirname"><a name="user-content-31-__filename-__dirname" href="#31-__filename-__dirname" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.1 __filename &amp; __dirname</h3>
+<h3 id="31-__filename-__dirname"><a name="user-content-31-__filename-__dirname" href="#31-__filename-__dirname" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.1 <code>__filename</code> &amp;&amp; <code>__dirname</code></h3>
 <p>属性：<br />
-1）__filename &ndash; 表示当前编译后的绝对路径<br />
-2）__dirname &ndash; 表示当前编译后的模块所在文件夹的绝对路径<br />
+1）<code>__filename</code> &ndash; 表示当前编译后的绝对路径<br />
+2）<code>__dirname</code> &ndash; 表示当前编译后的模块所在文件夹的绝对路径<br />
 3）ECMA对象</p>
-<p>示例：<br />
+<p>示例：</p>
 <pre><code>console.log(__filename)
 // D:\soft\wamp\www\GitHub\learnNode\1基础\html\7global.js
 console.log(__dirname)
 // D:\soft\wamp\www\GitHub\learnNode\1基础\html
-</code></pre></p>
+</code></pre>
+
 <h3 id="32-process"><a name="user-content-32-process" href="#32-process" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.2 process 对象</h3>
 <p>process 对象属于global对象，通过这个对象可以返回与当前运行程序相关的信息；<br />
 可以通过<code>console.log(process)</code>来查看</p>
@@ -1242,7 +1243,7 @@ console.log(a)
 <p>方法4：exit(code)退出</p>
 <p>方法5：kill(pid) &ndash; 向进程发送信息</p>
 <p>方法6：stdin &amp; stdout 输入输出流</p>
-<p>1）<code>process.stdout.write('hello')</code> </p>
+<p>1）<code>process.stdout.write('hello')</code></p>
 <p>2）事件&ndash; <code>process.stdin.on('data', function(chunk){})</code><br />
 只有在输入完成后才会触发，一般认为回车是输入完成的标示，<br />
 chunk 是输入的内容</p>
@@ -1270,10 +1271,11 @@ process.stdin.on('data', function(chunk) {
 <h3 id="32-buffer"><a name="user-content-32-buffer" href="#32-buffer" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.2 Buffer 类</h3>
 <p>用于更好的操作2进制的数据流<br />
 注：Buffer 一旦实例出来就不能修改其长度</p>
-<p>1）new Buffer(size)<br />
+<p>1）new Buffer(size)</p>
 <pre><code>var a = new Buffer(4)
 console.log(a) //&lt;Buffer 00 00 00 00&gt;
-</code></pre></p>
+</code></pre>
+
 <p>返回由16进制构成的长度为4的信息；</p>
 <p>2）new Buffer(array)<br />
 <pre><code>var arr = new Buffer([1,2,3])
@@ -1284,7 +1286,7 @@ console.log(arr) //&lt;Buffer 01 02 03&gt;
 console.log(str) //&lt;Buffer 61 62 63&gt;
 console.log(str.length) //3
 console.log(str[0]) //97
-console.log(String.fromCharCode(str[0])) 
+console.log(String.fromCharCode(str[0]))
 </code></pre></p>
 <p>注：一个中文站3个字节</p>
 <pre><code>var str1 = '哈哈哈';
@@ -1408,7 +1410,7 @@ console.log(buf)
 console.log(buf) //abcdcde
 </code></pre>
 
-<h3 id="34-filesystem-fs"><a name="user-content-34-filesystem-fs" href="#34-filesystem-fs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.4 FileSystem &ndash; fs模块</h3>
+<h2 id="3-filesystem-fs"><a name="user-content-3-filesystem-fs" href="#3-filesystem-fs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 FileSystem &ndash; fs模块的底层实现方法</h2>
 <p>注：fs模块下的方法，都有同步和异步两种，参数基本相同，只是同步使用回调确保执行顺序，通过没有回调</p>
 <p>用于处理文件或者是文件夹</p>
 <p>1) fs.open() || fs.openSync() 打开一个文件</p>
@@ -1434,18 +1436,364 @@ fs.open('1.txt', 'r', function(){
 <p>fd：文件标示，<br />
 buffer：buffer对象<br />
 offset：如果由A向B输出，那么offset就是在B中其实位置</p>
-<pre><code>
-fs.open('1.txt', 'r', function(err, fd){
+<pre><code>fs.open('1.txt', 'r', function(err, fd){
   var str = new Buffer('123456789')
   console.log(str)
-  fs.read(fd, str, 0, 1, null, function(args){
+  fs.read(fd, str, 7, 2, 1, function(err, length, newBuf){
     console.log(arguments)
-//&lt;Buffer 31 32 33 34 35 36 37 38 39&gt;
-// { '0': null, '1': 1, '2': &lt;Buffer 61 32 33 34 35 36 37 38 39&gt; }
-// [Finished in 0.2s]
-
+    //{ '0': null, '1': 2, '2': &lt;Buffer 31 32 33 34 35 36 37 62 63&gt; }
+    //'1': 2, 是指要写入数据的长度
+    console.log(newBuf.toString())
+    //1234567bc
   })
 })
 </code></pre>
 
-<p>将一个新的数组添加在</p></article></body></html>
+<p>其中1.text：abcdefg<br />
+也就是说：从str中的第7个开始链接txt文件中的第一位后面的2位后产生新的buffer</p>
+<p>3) fs.write() || fs.writeSync()</p>
+<p>语法：<br />
+<pre><code>fs.write(fd, buffer, offset, length, [position], function(args){
+  // body
+})
+</code></pre></p>
+<p><pre><code>
+fs.open('./2.txt', 'r+', function(err, fd){
+  var str = new Buffer('array');
+  fs.write(fd, str, 1, 2, function(err, length, newBuf){
+    console.log(arguments)
+    // { '0': null, '1': 2, '2': &lt;Buffer 61 72 72 61 79&gt; }
+    console.log(newBuf.toString())
+    // array
+  })
+})
+
+</code></pre><br />
+注：1为要写入的str的偏移值，而2是指写入长度<br />
+这种方式可以修改原文件的内用<br />
+这里的1.text： 12345678； 当write后就变成了&rsquo;rr345678&rsquo;</p>
+<p>4)fs.close</p>
+<pre><code>
+fs.open('./2.txt', 'r+', function (err,fd) {
+  fs.close(fd, function () {
+    console.log('已经执行')
+  })
+})
+
+</code></pre>
+
+<h2 id="4-filesystem-fs"><a name="user-content-4-filesystem-fs" href="#4-filesystem-fs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 FileSystem &ndash; fs模块提供的方法</h2>
+<p>1) fs.writeFile() || fs.writeFileSync()</p>
+<pre><code>fs.writeFile(file, data, [options], function(args){
+  // body
+})
+</code></pre>
+
+<p>options 为编码格式</p>
+<pre><code>var fs = require('fs');
+
+var str = new Buffer('1234567')
+fs.writeFile('./3.txt', str, function(err){
+  console.log(arguments)
+  // { '0': null }
+})
+</code></pre>
+
+<p>特点：能找到，就将其内容覆盖掉，没有就创建一个，将str放入</p>
+<p>2) fs.appendFile() || fs.appendFileSync()</p>
+<p>语法：<br />
+<pre><code>fs.appendFile(file, data, [options], function(args){
+  // body
+})
+</code></pre></p>
+<p>在文件内容后添加,每执行一次都会添加一次,具有和fs.writeFile相同的特点</p>
+<pre><code>
+fs.appendFile('./3.txt', str, function(){
+  console.log(arguments)
+})
+</code></pre>
+
+<p>3)fs.exists() || fs.existsSync()</p>
+<p>语法：<br />
+<pre><code>
+fs.exists(path, function(args){
+  // body
+})
+</code></pre></p>
+<pre><code>fs.exists('./4.txt', function(err){
+  console.log(arguments)
+  // false
+})
+</code></pre>
+
+<pre><code>fs.exists('./4.txt', function(err){
+  console.log(arguments)
+  console.log(err)
+  if (!err) {
+    console.log(1)
+    var str = new Buffer('这是后来创建的')
+    fs.writeFile('./4.txt', str, function(err){
+      console.log(arguments)
+    })
+  }
+})
+</code></pre>
+
+<p>4) fs.readFile() || fs.readFileSync()</p>
+<p>读取文件信息</p>
+<p>语法：<br />
+<pre><code>
+fs.readFile(file, [options], function(args){
+  // body
+})
+</code></pre></p>
+<pre><code>
+fs.readFile('./3.txt', function(err, buf){
+  console.log(arguments)
+
+  console.log(buf.toString())
+})
+// { '0': null,
+  // '1': &lt;Buffer 31 32 33 34 35 36 37 31 32 33 34 35 36 37&gt; }
+// 12345671234567
+</code></pre>
+
+<p>5) fs.unlink() || fs.unlinkSync()</p>
+<p>删除某个文件</p>
+<p>语法：<br />
+<pre><code>
+fs.unlink(path, function(args){
+  // body
+})
+</code></pre></p>
+<pre><code>fs.writeFile('./5.txt', '这里是测试unlink', function(){
+  console.log(arguments)
+})
+
+fs.unlink('./5.txt', function(){
+  console.log(arguments)
+  console.log('文件已经删除')
+})
+</code></pre>
+
+<p>6) fs.rename() || fs.renameSync()</p>
+<p>更改文件名</p>
+<pre><code>fs.rename(oldPath, newPath, function(args){
+  // body
+})
+</code></pre>
+
+<pre><code>fs.writeFile('6.txt', '这里是用来测试rename的', function(){
+
+})
+
+fs.rename('./6.txt', 'rename.txt', function(err){
+  console.log(arguments)
+})
+
+</code></pre>
+
+<p>7)fs.watch()<br />
+<code>// fs.watch(filename, [options], [listener])</code><br />
+事件，当文件改变的时候触发，其中回调里的参数，第一个参数在修改内容的时候显示change，修改名字的时候显示rename，第二个参数表示，文件名</p>
+<p><pre><code>fs.writeFile('7.txt', '这里是用来测试fs.watch的', function(){
+
+})
+
+fs.watch('./7.txt', function (arguments) {
+  console.log(arguments)
+  // rename
+})
+
+fs.rename('./7.txt', './xiugaile', function(){
+})
+
+</code></pre><br />
+这个事件非常不稳定，使用前要先验证是否有效</p>
+<p>8)fs.mkdir() || fs.mkdirSync()<br />
+创建文件夹</p>
+<pre><code>fs.mkdir(path, [mode], function(args){
+
+  // body
+})
+</code></pre>
+
+<pre><code>fs.mkdir('./mkdir', function(err){
+  console.log(arguments)
+})
+</code></pre>
+
+<p>9) fs.rmdir() || fs.rmdirSync()</p>
+<p>语法：<br />
+<pre><code>fs.rmdir(path, function(args){
+  // body
+})
+</code></pre></p>
+<pre><code>fs.rmdir('./mkdir', function(err){
+console.log(arguments)
+})
+</code></pre>
+
+<p>10) fs.readdir() || fs.readdirSync()</p>
+<p>读取文件夹下文件信息</p>
+<pre><code>fs.readdir(path, function(args){
+  // body
+})
+</code></pre>
+
+<p>function中第一个参数是err错误信息，第二个参数为fileList</p>
+<pre><code>fs.readdir('./../html/', function(){
+  console.log(arguments)
+})
+
+/*
+{ '0': null,
+  '1':
+   [ '1.txt',
+     '1node.js',
+     '2.txt',
+     '2node.js',
+     '3.txt',
+     '3require.js',
+     '4.txt',
+     '4require.js',
+  ...
+     'xiugaile' ] }
+ */
+</code></pre>
+
+<p>11) fs.stat()<br />
+用于查找文件和文件夹的类型</p>
+<p>其中文件夹为16822 而 文件为 33206</p>
+<pre><code>fs.stat(e, function (err, infor) {
+  console.log(e)
+  console.log(infor.mode)
+})
+</code></pre>
+
+<p>e代表文件夹或者是文件<br />
+其中第二个参数存有e的详细信息，其中存在一个mode，当文件夹时mode为16822 而 文件mode为 33206</p>
+<pre><code>
+fs.readdir('./../html/', function(err, list){
+  list.forEach(function (e, i) {
+    fs.stat(e, function (err, infor) {
+    /*  console.log(e)
+      console.log(infor)*/
+      console.log(infor.mode)
+      switch(infor.mode) {
+        case 33206:
+          console.log('[文件]'+ e);
+        break;
+        default:
+          console.log(1)
+      }
+    })
+  })
+})
+</code></pre>
+
+<h2 id="5-nodejs-web"><a name="user-content-5-nodejs-web" href="#5-nodejs-web" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5 NodeJs Web 开发：</h2>
+<p>注：如果要在浏览器上查看效果，必须要运行nodeJS；</p>
+<h3 id="51"><a name="user-content-51" href="#51" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.1 简介：</h3>
+<p>当用户浏览网页的时候，都经历了以下的过程：</p>
+<ol>
+<li>由用户发送HTTP请求；</li>
+<li>主机接受请求，并对用户的请求进行分析；然后相应的命令或者内容返回到用户的机器；</li>
+<li>由用户的机器接受主机返回的内容，然后执行相应操作，最后显示到界面上；</li>
+</ol>
+<p>总的来说，上网的过程就是客户端与服务端之间的通讯</p>
+<h3 id="52-nodejs-http"><a name="user-content-52-nodejs-http" href="#52-nodejs-http" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.2 NodeJs 中的HTTP模块</h3>
+<p>NodeJs 适用于在服务端处理用户发送的数据；</p>
+<p>首先要了解HTTP模块：</p>
+<h4 id="521-http"><a name="user-content-521-http" href="#521-http" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.2.1 加载http模块</h4>
+<p><code>var http = require ('http')</code></p>
+<h4 id="522-web"><a name="user-content-522-web" href="#522-web" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.2.2 创建web服务器对象</h4>
+<p><code>var server = http.createServer()</code></p>
+<p>接受一个回调函数，当 客户端发送请求的时候触发，相当于server.on(&lsquo;request&rsquo;, fn) 的时候触发；</p>
+<h4 id="523-server"><a name="user-content-523-server" href="#523-server" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.2.3 server对象功能：</h4>
+<p><a href="///D://soft/wamp/www/GitHub/learnNode/1%E5%9F%BA%E7%A1%80/html2/dome1.js">demo1</a></p>
+<ol>
+<li>监听<br />
+<code>server.listen([port], [hostname], [backlog], [callback])</code></li>
+</ol>
+<p>port &ndash; 监听的端口，如果不写会自动分配，其中1-1024 一般都是已经被使用了，所以写入的时候一帮要往大了写；<br />
+hostname &ndash; 主机名(IP/域名)，如果不传，默认监听所有网卡的传输数据；<br />
+backlog &ndash; 链接等待队列的最大长度</p>
+<p>注：<br />
+  1. 一个端口只能被一个程序箭筒，但是一个程序可以监听多个端口；<br />
+  2. 只有调用了<code>server.listen()</code> 服务器才能接受命令</p>
+<ol>
+<li>server.address()<br />
+<code>返回：{ address: '::', family: 'IPv6', port: 54115 }</code></li>
+</ol>
+<p>如果使用的端口已经被占用了，就会返回 error<br />
+<pre><code>events.js:160
+      throw er; // Unhandled 'error' event
+      ^
+</code></pre></p>
+<ol>
+<li>错误处理</li>
+</ol>
+<p><code>server.on('error', function(ev){})</code></p>
+<p>注： 这里的ev存放这错误信息</p>
+<ol>
+<li>成功处理</li>
+</ol>
+<p><code>server.on('listening', function () {})</code></p>
+<ol>
+<li>发生请求</li>
+</ol>
+<p><code>server.on('request', function  () {})</code></p>
+<p>这是监控用户发送的行为，如果用户发送了请求，在服务端返回数据或者命令前，客户端就会不断发送请求，直到接受请求或者请求延时的时间结束；<br />
+在createServer中</p>
+<p>在 request 事件的函数中，存在两个参数</p>
+<p>例如：<br />
+<pre><code>server.on('request', function  (req, res) {
+  console.log(req)
+})
+</code></pre></p>
+<p>req &ndash; 接受客户端的信息，是HTTP对象的实例；<br />
+其中常用的属性有：<br />
+. httpVersion &ndash; 协议版本<br />
+. headers &ndash; 客户端发来的头信息，是一个对象<br />
+. url &ndash; 路径<br />
+. method &ndash; 请求方式 get || post</p>
+<p>res &ndash; 向客户端反馈信息，就由这个参数完成</p>
+<p>其中常用的方法有：<br />
+. res.setTimeout(num) &ndash; 设置延迟时间，默认2分钟，如果请求的时间超出延时时间，就告诉客户端不用在请求了</p>
+<p>. res.write(&lsquo;&rsquo;) &ndash; 写入数据，只接受字符串格式的内容，这里面的会传输给客户端，这里面如果是标签格式的，将会被浏览器解析；</p>
+<p>. res.end() &ndash; 所有写入已经执行结束的标示，当执行到这里的时候，就将write传输给客户端；<br />
+可以接受一个字符串参数，这个参数会调用 write；</p>
+<pre><code>  res.write('&lt;h1&gt;哈哈哈哈&lt;/h1&gt;');
+  res.end('&lt;h2&gt;呜呜呜呜&lt;/h2&gt;')
+</code></pre>
+
+<p><img src="///D://soft/wamp/www/GitHub/learnNode/1%E5%9F%BA%E7%A1%80/img/resEnd.png" alt=""></p>
+<p>. res.setHeader() &ndash; 设置返回的 <strong>自定义</strong> 头信息</p>
+<p>注：<br />
+1. 要将setHeader() 写在 write() 前，不然会报错<br />
+2. 格式：<code>res.setHeader(key, value)</code><br />
+可以在netWork 中查看：<br />
+<img src="///D://soft/wamp/www/GitHub/learnNode/1%E5%9F%BA%E7%A1%80/img/setHeader.png" alt=""></p>
+<p>. res.writeHead(状态码，[详情]，{头信息})<br />
+其中头信息包括content.type属性，用于设置浏览器对write的解析方式；<br />
+例如：<br />
+<code>{'content-type : text/html; charset:utf-8'}</code></p>
+<p>注：<br />
+1. writeHead 必须写在setHead 后面，end前面</p>
+<h4 id="525-url"><a name="user-content-525-url" href="#525-url" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.2.5 URL 处理（路由）</h4>
+<p>由于在url常常这种形式：<br />
+<code>http://localhost:8080/a/b/a.html</code> 指向根目录下的路径，如果不做处理的话就会返回一样的数据；</p>
+<ol>
+<li>url 模块</li>
+</ol>
+<p>1) 请求模块<br />
+<code>var ul = require('ul')</code></p>
+<p>2) 得到路径</p>
+<p>url.parse(req.url)</p>
+<p>返回的是：<br />
+Url {protocol: null,slashes: null,auth: null,host: null,port: null,hostname: null,hash: null,search: null,query: null,pathname: &lsquo;/a/b/a.html&rsquo;,path: &lsquo;/a/b/a.html&rsquo;,href: &lsquo;/a/b/a.html&rsquo; }</p>
+<p>我们选取其中的pathname</p>
+<p>3) 拆分</p>
+<p>请求的方式有两种：1. get 2. post</p>
+<p>get 方式</p></article></body></html>
