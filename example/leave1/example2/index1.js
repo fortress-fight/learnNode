@@ -1,0 +1,1 @@
+function e2 (){alert(2)}
