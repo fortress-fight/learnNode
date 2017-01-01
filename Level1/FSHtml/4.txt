@@ -1,0 +1,3 @@
+﻿这里是writeFile这里是appendFilefunction () {
+	var str = '这里是appendFile'
+}
