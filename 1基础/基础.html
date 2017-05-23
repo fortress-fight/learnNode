@@ -1,0 +1,1799 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>基础</title></head><body><article class="markdown-body"><h1 id="learn-nodejs"><a name="user-content-learn-nodejs" href="#learn-nodejs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Learn Nodejs</h1>
+<h2 id="1"><a name="user-content-1" href="#1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. 基础</h2>
+<h3 id="11-nodejs"><a name="user-content-11-nodejs" href="#11-nodejs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.1 什么是nodejs</h3>
+<p>nodejs 是和 JavaScript 具有相同的语言风格，但是功能不同的两种语言，也可以说 nodejs 只是 JavaScript 的一种运行环境，(JavaScript 是一种脚本语言，而脚本语言就需要一个解析器)，当JavaScript运行在浏览器中，浏览器就是JavaScript的解析器(浏览器并不是直接解析js文件，而是通过html文件)，如果需要js文件独立运行，就需要nodejs了，这时node就是js的解析器；</p>
+<p>每一个解析器（运行环境），允许js使用其提供的内置对象或者方法，去做一些事情，例如：浏览器（DOM操作）提供的document对象。在 nodejs 中提供的就是 fs || http 等</p>
+<h3 id="12-nodejs-javascript"><a name="user-content-12-nodejs-javascript" href="#12-nodejs-javascript" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.2 nodejs 和 JavaScript</h3>
+<p>JavaScript 只不过是 nodejs 的作者为了实现其思想，选择的一种编程语言；</p>
+<p>相同：都是基于ECMA语法<br />
+例如在node中：<br />
+<pre><code>    var a = 100;
+    console.log(a)
+    // 100
+
+    var b = new Date();
+    console.log(b)
+    //Mon Dec 26 2016 01:49:53 GMT+0800 (中国标准时间)
+
+    var c = [1,2,3,4]
+    c.push(5);
+    console.log(c)
+    // [ 1, 2, 3, 4, 5 ]
+
+    function Person (name) {
+        this.name = name
+    }
+    Person.prototype.say = function(){
+        console.log(this.name)
+    };
+
+    var p1 = new Person('person');
+    p1.say();
+    // person
+</code></pre></p>
+<p>不同：<br />
+1. js中的顶层对象是window，但是node中没有window，其顶层对象是global；（在js中也存在global，但是不允许访问）<br />
+2. 在js 中，通过在通过 var 声明的变量是挂在window对象上的，但是在node中，通过var声明的对象，仅仅是在其模块作用域中（一个模块就是一个作用域）</p>
+<p>例如：<br />
+<pre><code>var a = 100;
+console.log(a) // 100
+console.log(global.a) // undefined
+
+
+global.a = 200;
+console.log(global.a) // 200
+</code></pre></p>
+<h3 id="13-nodejs"><a name="user-content-13-nodejs" href="#13-nodejs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.3 配置nodejs</h3>
+<p>下载地址： <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+<p>建议下载.msi 的版本，提供的npm等。</p>
+<p>配置编辑器：</p>
+<p>1）sublime:</p>
+<p>在sublime 中安装 nodejs插件，然后按照</p>
+<p><a href="http://www.cnblogs.com/qiaojie/p/5560388.html">http://www.cnblogs.com/qiaojie/p/5560388.html</a></p>
+<p>的方式，进行修改；<br />
+如果需要使用node编译，ctrl + B,</p>
+<p>2）WS</p>
+<p>webStorm:<br />
+默认配置，右键运行</p>
+<h3 id="14"><a name="user-content-14" href="#14" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.4 运行</h3>
+<p>1》运行 nodejs 或者 win+r 输入node<br />
+2》命令行： win+r 加 cmd 输入 node， 退出 使用两次 ctrl + c</p>
+<p>常用命令行：<br />
+cls &ndash; 清屏<br />
+cd &ndash; 路径<br />
+dir &ndash; 目录</p>
+<p>node -v 查看版本</p>
+<p>运行文件，通过 node 路径 就可以运行<br />
+例如：node D:\soft\wamp\www\GitHub\learnNode\1基础\html\1node.js</p>
+<p>3》 编辑器中运行</p>
+<h2 id="2-node"><a name="user-content-2-node" href="#2-node" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. node 模块</h2>
+<p>如果需要写大量代码，一般会将代码分到几个js文件中，在node中每一个js文件就是一个模块，文件路径就是模块名</p>
+<p>在编写模块的时候，都有require || module || exports 单个预先定义好的变量；</p>
+<h3 id="21-require"><a name="user-content-21-require" href="#21-require" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.1 require</h3>
+<p>使用 require 方法， 在一个模块中加载另一个模块；</p>
+<p><code>require('address')</code><br />
+address &mdash; 相对路径 || 绝对路径</p>
+<blockquote>
+<p>注：<br />
+相对路径：必须以 ‘./路径’ 的格式引入，如果没有 ‘./’ 就会指向node核心模块，或者去加载node目录下的 node_modules 文件夹内部的文件<br />
+绝对路劲：以/或C:之类的盘符开头</p>
+</blockquote>
+<p>当需要查找一个文件的时候，node内部会遵循一定的方式去查找，以require(&lsquo;./2&rsquo;)为例</p>
+<blockquote>
+<ol>
+<li>查找文件名称为2的文件</li>
+<li>查找2.js文件</li>
+<li>查找2.json文件</li>
+<li>查找2.node文件</li>
+<li>报错</li>
+</ol>
+</blockquote>
+<p>一旦查找到文件，就直接结束查找，并返回</p>
+<h3 id="22-module-exports"><a name="user-content-22-module-exports" href="#22-module-exports" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.2 module 和 exports 模块</h3>
+<p>在node中一个模块就是一个作用域，如果模块1 想直接访问 模块2 的内容，是访问不到的；</p>
+<p>解决方法：<br />
+1. 使用将变量挂在顶层对象 global 下。<br />
+不建议使用，会增加全局变量</p>
+<ol>
+<li>使用 module 模块对象 &mdash; module是局部对象<br />
+在 module 中保存着当前模块的信息，会在require的时候，被返回；</li>
+</ol>
+<p>例如：<br />
+<pre><code>console.log(module)
+</code></pre></p>
+<p>输出：<br />
+<pre><code>Module {
+id: '.',
+exports: {},
+parent: null,
+filename: 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\html\\5module.js',
+loaded: false,
+children: [],
+paths:
+[ 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\html\\node_modules',
+ 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\node_modules',
+ 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\node_modules',
+ 'D:\\soft\\wamp\\www\\GitHub\\node_modules',
+ 'D:\\soft\\wamp\\www\\node_modules',
+ 'D:\\soft\\wamp\\node_modules',
+ 'D:\\soft\\node_modules',
+ 'D:\\node_modules' ] }
+</code></pre></p>
+<p>可以将提供给外部去访问的元素，挂在module.exports下<br />
+例如：<br />
+<pre><code>console.log(module)
+var a = 100;
+module.exports.a = 100;
+console.log(module)
+</code></pre></p>
+<p>输出：<br />
+<pre><code>Module {
+  id: '.',
+  exports: { a: 100 },
+  parent: null,
+  filename: 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\html\\5module.js',
+  loaded: false,
+  children: [],
+  paths:
+   [ 'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\html\\node_modules',
+     'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\node_modules',
+     'D:\\soft\\wamp\\www\\GitHub\\learnNode\\node_modules',
+     'D:\\soft\\wamp\\www\\GitHub\\node_modules',
+     'D:\\soft\\wamp\\www\\node_modules',
+     'D:\\soft\\wamp\\node_modules',
+     'D:\\soft\\node_modules',
+     'D:\\node_modules' ] }
+</code></pre></p>
+<p>在局部模块中还存在属性&ndash;exports<br />
+exports === module.exports</p>
+<p>所以exports.a = 100 和 module.exports.a = 100 是相同的</p>
+<p>注：<br />
+不建议修改 module.exports ,如果修改了module.exports 就将破坏exports和module.exports的关联，对exports一样；</p>
+<h3 id="23"><a name="user-content-23" href="#23" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.3 其它</h3>
+<p>1) 模块初始化<br />
+一个模块中的JS代码仅在模块第一次被使用时执行一次，并在执行过程中初始化模块的导出对象。之后，缓存起来的导出对象被重复利用。</p>
+<p>实例：<br />
+文件1：<br />
+<pre><code>var count1 = require('./8.1module.js')
+var count2 = require('./8.1module.js')
+
+console.log(count1()) // 2
+console.log(count2()) // 3
+</code></pre></p>
+<p>文件2：<br />
+<pre><code>var i = 1;
+function count () {
+  i += 1;
+  return i;
+}
+
+module.exports = count;
+</code></pre></p>
+<p>2)主模块</p>
+<p>通过命令行参数传递给NodeJS以启动程序的模块被称为主模块。主模块负责调度组成整个程序的其它模块完成工作。</p>
+<p>例如:<br />
+通过以下命令启动程序时，main.js就是主模块。<br />
+<code>$ node main.js</code></p>
+<h2 id="3-global"><a name="user-content-3-global" href="#3-global" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. global对象</h2>
+<h3 id="31-__filename-__dirname"><a name="user-content-31-__filename-__dirname" href="#31-__filename-__dirname" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.1 <code>__filename</code> &amp;&amp; <code>__dirname</code></h3>
+<p>属性：<br />
+1）<code>__filename</code> &ndash; 表示当前编译后的绝对路径<br />
+2）<code>__dirname</code> &ndash; 表示当前编译后的模块所在文件夹的绝对路径<br />
+3）ECMA对象</p>
+<p>示例：</p>
+<pre><code>console.log(__filename)
+// D:\soft\wamp\www\GitHub\learnNode\1基础\html\7global.js
+console.log(__dirname)
+// D:\soft\wamp\www\GitHub\learnNode\1基础\html
+</code></pre>
+
+<h3 id="32-process"><a name="user-content-32-process" href="#32-process" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.2 process 对象</h3>
+<p>process 对象属于global对象，通过这个对象可以返回与当前运行程序相关的信息；<br />
+可以通过<code>console.log(process)</code>来查看</p>
+<p>属性1：argv &ndash; 一组包含命令行参数的数组；</p>
+<pre><code>  C:\Users\dream&gt;node D:\soft\wamp\www\GitHub\learnNode\1基础\html\process_argv.js 1
+[ 'C:\\Program Files\\nodejs\\node.exe',
+  'D:\\soft\\wamp\\www\\GitHub\\learnNode\\1基础\\html\\process_argv.js',
+  '1' ]
+</code></pre>
+
+<p>属性2：env &ndash; 环境信息</p>
+<p>属性3：pid &ndash; 信息值 // 可以在进程管理器中查看到pid</p>
+<p>属性4：title &ndash; 进程的名称</p>
+<pre><code>console.log(process.title)
+//C:\WINDOWS\system32\cmd.exe
+</code></pre>
+
+<p>属性5：arch &ndash; cpu 信息</p>
+<p>方法1：cwd() 返回当前进程的目录<br />
+<pre><code>var a = process.cwd()
+console.log(a)
+//D:\soft\wamp\www\GitHub\learnNode\1基础\html
+</code></pre></p>
+<p>方法2：chdir(directory) &ndash; 改变当前进程的目录</p>
+<pre><code>process.chdir('c:')
+var a = process.cwd();
+console.log(a)
+//C:\
+</code></pre>
+
+<p>方法3：memoryUsage() &ndash; 返回node进程占用的内存</p>
+<pre><code>var a = process.memoryUsage()
+console.log(a)
+
+// { rss: 15785984, heapTotal: 6910248, heapUsed: 2511084 }
+</code></pre>
+
+<p>方法4：exit(code)退出</p>
+<p>方法5：kill(pid) &ndash; 向进程发送信息</p>
+<p>方法6：stdin &amp; stdout 输入输出流</p>
+<p>1）<code>process.stdout.write('hello')</code></p>
+<p>2）事件&ndash; <code>process.stdin.on('data', function(chunk){})</code><br />
+只有在输入完成后才会触发，一般认为回车是输入完成的标示，<br />
+chunk 是输入的内容</p>
+<pre><code>// process.stdout.write('hello')
+// hellow
+var a;
+var b;
+
+process.stdout.write('请输入a的值：');
+
+process.stdin.on('data', function(chunk) {
+
+    if (!a) {
+        a = Number(chunk);
+        process.stdout.write('请输入b的值：');
+    } else {
+        b = Number(chunk);
+
+        process.stdout.write( '结果是：' + (a + b) );
+    }
+
+});
+</code></pre>
+
+<h3 id="32-buffer"><a name="user-content-32-buffer" href="#32-buffer" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.2 Buffer 类</h3>
+<p>用于更好的操作2进制的数据流<br />
+注：Buffer 一旦实例出来就不能修改其长度</p>
+<p>1）new Buffer(size)</p>
+<pre><code>var a = new Buffer(4)
+console.log(a) //&lt;Buffer 00 00 00 00&gt;
+</code></pre>
+
+<p>返回由16进制构成的长度为4的信息；</p>
+<p>2）new Buffer(array)<br />
+<pre><code>var arr = new Buffer([1,2,3])
+console.log(arr) //&lt;Buffer 01 02 03&gt;
+</code></pre></p>
+<p>3）new Buffer(string, [encoding])<br />
+<pre><code>var str = new Buffer('abc', 'utf-8')
+console.log(str) //&lt;Buffer 61 62 63&gt;
+console.log(str.length) //3
+console.log(str[0]) //97
+console.log(String.fromCharCode(str[0]))
+</code></pre></p>
+<p>注：一个中文站3个字节</p>
+<pre><code>var str1 = '哈哈哈';
+console.log(str1.length); // 3
+console.log(new Buffer(str1).length);//9
+</code></pre>
+
+<p>Buffer的方法：</p>
+<p>1） write</p>
+<p><code>buf.write(要写入的字符串, 从Buffer对象中的几位开始写入, 写入的字符串的长度, 写入的字符串的编码)</code></p>
+<pre><code>var str = 'abcdefg'
+console.log(new Buffer(str))
+var buf = new Buffer(3)
+
+buf.write(str)
+console.log(buf)
+//&lt;Buffer 61 62 63 64 65 66 67&gt;
+//&lt;Buffer 61 62 63&gt;
+</code></pre>
+
+<p>将str，以buf的长度重写</p>
+<pre><code>buf.write(str, 2)
+console.log(buf)
+// &lt;Buffer 61 62 63 64 65 66 67&gt;
+// &lt;Buffer a0 81 61&gt;
+</code></pre>
+
+<p>将str在buf的第二位开始写</p>
+<pre><code>
+buf.write(str,1,1)
+console.log(buf)
+// &lt;Buffer 61 62 63 64 65 66 67&gt;
+// &lt;Buffer 00 61 00&gt;
+</code></pre>
+
+<p>从buf的第一位开始写，写一位</p>
+<p>注：如果是中文的化，会将其先转化成3个字节，在计算位置</p>
+<pre><code>var str = '哈哈哈';
+console.log(new Buffer(str))
+//&lt;Buffer e5 93 88 e5 93 88 e5 93 88&gt;
+
+var wr = new Buffer(5)
+wr.write(str, 1)
+console.log(wr)
+// &lt;Buffer 66 e5 93 88 01&gt;
+</code></pre>
+
+<p>2）toString</p>
+<p><code>buf.toString('编码格式', 起始位置, 结束位置)</code></p>
+<pre><code>var str = 'abcd哈哈哈'
+var buf = new Buffer(str);
+console.log(buf) //&lt;Buffer 61 62 63 64 e5 93 88 e5 93 88 e5 93 88&gt;
+console.log(buf.toString()) //abcd哈哈哈
+console.log(buf.toString('utf8', '1'))//bcd哈哈哈
+console.log(buf.toString('utf8', 5))//��哈哈（因为将中文的三个字节截掉了一个）
+</code></pre>
+
+<p>3）toJSON</p>
+<pre><code>var str = 'abcd'
+var buf = new Buffer(str)
+console.log(buf.toJSON())
+//{ type: 'Buffer', data: [ 97, 98, 99, 100 ] }
+</code></pre>
+
+<p>4）slice<br />
+<code>buf.slice('起始位置', '结束位置')</code></p>
+<pre><code>var str = 'abcdef'
+var buf = new Buffer(str);
+console.log(buf)//&lt;Buffer 61 62 63 64 65 66&gt;
+var bufSon = buf.slice(1, 4)
+console.log(bufSon)//&lt;Buffer 62 63 64&gt;
+</code></pre>
+
+<p>5)copy</p>
+<p><code>Buffer.copy(targetBuffer, [targetStart], [sourceStart], [sourceEnd]);</code><br />
+相对来说并没有直接的直接拷贝副本的方法，只能新建一个长度相等的Buffer，然后在原Buffer上调用copy方法，参数中还可以设置copy的启事与结束位置等。</p>
+<pre><code>var buf = new Buffer('str');
+var b = buf;
+var bufSon = new Buffer(b.length)
+buf.copy(bufSon)
+// &lt;Buffer 73 74 72&gt;
+console.log(bufSon)
+</code></pre>
+
+<p>buf &ndash; 母体 bufSon &ndash; 子体，字体要母体上copy，需要母体调用copy方法，第一个参数指定子体，而子体要指定和母体相同的长度</p>
+<h3 id="3-buffer"><a name="user-content-3-buffer" href="#3-buffer" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Buffer 方法</h3>
+<p>1）Buffer.isEncoding(encodeing)<br />
+检测Buffer是否支持encoding<br />
+//console.log( Buffer.isEncoding(&lsquo;utf-8&rsquo;) ); // true</p>
+<p>2）Buffer.isBuffer(obj)<br />
+检测obj是否是Buffer对象<br />
+<pre><code>var arr = [1,2,3];
+var bf = new Buffer(10);
+
+console.log( Buffer.isBuffer(arr) );//false
+console.log( Buffer.isBuffer(bf) );//true
+
+</code></pre></p>
+<p>3）Buffer.byteLength(str1,[encoding])</p>
+<p>返回真实的字节长度，默认为utf8的格式下的长度<br />
+<pre><code>var str = 'avbd'
+console.log(Buffer.byteLength(str)) //4
+</code></pre></p>
+<p>4）Buffer.concat()</p>
+<pre><code>var buf1 = new Buffer('abcd');
+console.log(buf1)
+// &lt;Buffer 61 62 63 64&gt;
+var buf2 = new Buffer('cde');
+console.log(buf2)
+// &lt;Buffer 63 64 65&gt;
+var buf = Buffer.concat([buf1, buf2])
+console.log(buf)
+// &lt;Buffer 61 62 63 64 63 64 65&gt;
+var buf = Buffer.concat([buf1, buf2],3)
+console.log(buf)
+// &lt;Buffer 61 62 63&gt;
+</code></pre>
+
+<p>注：在node中 + 号，同样进行了隐式类型转换,实际上是调用了toString的方法</p>
+<pre><code>var buf = buf1+buf2;
+console.log(buf) //abcdcde
+</code></pre>
+
+<h2 id="3-filesystem-fs"><a name="user-content-3-filesystem-fs" href="#3-filesystem-fs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 FileSystem &ndash; fs模块的底层实现方法</h2>
+<p>注：fs模块下的方法，都有同步和异步两种，参数基本相同，只是同步使用回调确保执行顺序，通过没有回调</p>
+<p>用于处理文件或者是文件夹</p>
+<p>1) fs.open() || fs.openSync() 打开一个文件</p>
+<p>语法：<br />
+<pre><code>fs.open(path, flags, [mode], function(args){
+  // body
+})
+fs.openSync(path, flags, [mode])
+</code></pre></p>
+<p><pre><code>var fs = require('fs');
+fs.open('1.txt', 'r', function(){
+  console.log(arguments)
+})
+//{ '0': null, '1': 3 }
+</code></pre><br />
+回调中第一个参数是error信息，第二个参数是fd：文件标示，也就是说3就代表这这个文件</p>
+<p>2) fs.read() || fs.readSync() &ndash; 读取文件</p>
+<p>语法：<br />
+<pre><code>fs.read(fd, buffer, offset, length, position, function(args){
+  // body
+})
+</code></pre></p>
+<p>fd：文件标示，<br />
+buffer：buffer对象<br />
+offset：如果由A向B输出，那么offset就是在B中其实位置</p>
+<pre><code>fs.open('1.txt', 'r', function(err, fd){
+  var str = new Buffer('123456789')
+  console.log(str)
+  fs.read(fd, str, 7, 2, 1, function(err, length, newBuf){
+    console.log(arguments)
+    //{ '0': null, '1': 2, '2': &lt;Buffer 31 32 33 34 35 36 37 62 63&gt; }
+    //'1': 2, 是指要写入数据的长度
+    console.log(newBuf.toString())
+    //1234567bc
+  })
+})
+</code></pre>
+
+<p>其中1.text：abcdefg<br />
+也就是说：从str中的第7个开始链接txt文件中的第一位后面的2位后产生新的buffer</p>
+<p>3) fs.write() || fs.writeSync()</p>
+<p>语法：<br />
+<pre><code>fs.write(fd, buffer, offset, length, [position], function(args){
+  // body
+})
+</code></pre></p>
+<p><pre><code>
+fs.open('./2.txt', 'r+', function(err, fd){
+  var str = new Buffer('array');
+  fs.write(fd, str, 1, 2, function(err, length, newBuf){
+    console.log(arguments)
+    // { '0': null, '1': 2, '2': &lt;Buffer 61 72 72 61 79&gt; }
+    console.log(newBuf.toString())
+    // array
+  })
+})
+
+</code></pre><br />
+注：1为要写入的str的偏移值，而2是指写入长度<br />
+这种方式可以修改原文件的内用<br />
+这里的1.text： 12345678； 当write后就变成了&rsquo;rr345678&rsquo;</p>
+<p>4)fs.close</p>
+<pre><code>
+fs.open('./2.txt', 'r+', function (err,fd) {
+  fs.close(fd, function () {
+    console.log('已经执行')
+  })
+})
+
+</code></pre>
+
+<h2 id="4-filesystem-fs"><a name="user-content-4-filesystem-fs" href="#4-filesystem-fs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 FileSystem &ndash; fs模块提供的方法</h2>
+<p>1) fs.writeFile() || fs.writeFileSync()</p>
+<pre><code>fs.writeFile(file, data, [options], function(args){
+  // body
+})
+</code></pre>
+
+<p>options 为编码格式</p>
+<pre><code>var fs = require('fs');
+
+var str = new Buffer('1234567')
+fs.writeFile('./3.txt', str, function(err){
+  console.log(arguments)
+  // { '0': null }
+})
+</code></pre>
+
+<p>特点：能找到，就将其内容覆盖掉，没有就创建一个，将str放入</p>
+<p>2) fs.appendFile() || fs.appendFileSync()</p>
+<p>语法：<br />
+<pre><code>fs.appendFile(file, data, [options], function(args){
+  // body
+})
+</code></pre></p>
+<p>在文件内容后添加,每执行一次都会添加一次,具有和fs.writeFile相同的特点</p>
+<pre><code>
+fs.appendFile('./3.txt', str, function(){
+  console.log(arguments)
+})
+</code></pre>
+
+<p>3)fs.exists() || fs.existsSync()</p>
+<p>语法：<br />
+<pre><code>
+fs.exists(path, function(args){
+  // body
+})
+</code></pre></p>
+<pre><code>fs.exists('./4.txt', function(err){
+  console.log(arguments)
+  // false
+})
+</code></pre>
+
+<pre><code>fs.exists('./4.txt', function(err){
+  console.log(arguments)
+  console.log(err)
+  if (!err) {
+    console.log(1)
+    var str = new Buffer('这是后来创建的')
+    fs.writeFile('./4.txt', str, function(err){
+      console.log(arguments)
+    })
+  }
+})
+</code></pre>
+
+<p>4) fs.readFile() || fs.readFileSync()</p>
+<p>读取文件信息</p>
+<p>语法：<br />
+<pre><code>
+fs.readFile(file, [options], function(args){
+  // body
+})
+</code></pre></p>
+<pre><code>
+fs.readFile('./3.txt', function(err, buf){
+  console.log(arguments)
+
+  console.log(buf.toString())
+})
+// { '0': null,
+  // '1': &lt;Buffer 31 32 33 34 35 36 37 31 32 33 34 35 36 37&gt; }
+// 12345671234567
+</code></pre>
+
+<p>5) fs.unlink() || fs.unlinkSync()</p>
+<p>删除某个文件</p>
+<p>语法：<br />
+<pre><code>
+fs.unlink(path, function(args){
+  // body
+})
+</code></pre></p>
+<pre><code>fs.writeFile('./5.txt', '这里是测试unlink', function(){
+  console.log(arguments)
+})
+
+fs.unlink('./5.txt', function(){
+  console.log(arguments)
+  console.log('文件已经删除')
+})
+</code></pre>
+
+<p>6) fs.rename() || fs.renameSync()</p>
+<p>更改文件名</p>
+<pre><code>fs.rename(oldPath, newPath, function(args){
+  // body
+})
+</code></pre>
+
+<pre><code>fs.writeFile('6.txt', '这里是用来测试rename的', function(){
+
+})
+
+fs.rename('./6.txt', 'rename.txt', function(err){
+  console.log(arguments)
+})
+
+</code></pre>
+
+<p>7)fs.watch()<br />
+<code>// fs.watch(filename, [options], [listener])</code><br />
+事件，当文件改变的时候触发，其中回调里的参数，第一个参数在修改内容的时候显示change，修改名字的时候显示rename，第二个参数表示，文件名</p>
+<p><pre><code>fs.writeFile('7.txt', '这里是用来测试fs.watch的', function(){
+
+})
+
+fs.watch('./7.txt', function (arguments) {
+  console.log(arguments)
+  // rename
+})
+
+fs.rename('./7.txt', './xiugaile', function(){
+})
+
+</code></pre><br />
+这个事件非常不稳定，使用前要先验证是否有效</p>
+<p>8)fs.mkdir() || fs.mkdirSync()<br />
+创建文件夹</p>
+<pre><code>fs.mkdir(path, [mode], function(args){
+
+  // body
+})
+</code></pre>
+
+<pre><code>fs.mkdir('./mkdir', function(err){
+  console.log(arguments)
+})
+</code></pre>
+
+<p>9) fs.rmdir() || fs.rmdirSync()</p>
+<p>语法：<br />
+<pre><code>fs.rmdir(path, function(args){
+  // body
+})
+</code></pre></p>
+<pre><code>fs.rmdir('./mkdir', function(err){
+console.log(arguments)
+})
+</code></pre>
+
+<p>10) fs.readdir() || fs.readdirSync()</p>
+<p>读取文件夹下文件信息</p>
+<pre><code>fs.readdir(path, function(args){
+  // body
+})
+</code></pre>
+
+<p>function中第一个参数是err错误信息，第二个参数为fileList</p>
+<pre><code>fs.readdir('./../html/', function(){
+  console.log(arguments)
+})
+
+/*
+{ '0': null,
+  '1':
+   [ '1.txt',
+     '1node.js',
+     '2.txt',
+     '2node.js',
+     '3.txt',
+     '3require.js',
+     '4.txt',
+     '4require.js',
+  ...
+     'xiugaile' ] }
+ */
+</code></pre>
+
+<p>11) fs.stat()<br />
+用于查找文件和文件夹的类型</p>
+<p>其中文件夹为16822 而 文件为 33206</p>
+<pre><code>fs.stat(e, function (err, infor) {
+  console.log(e)
+  console.log(infor.mode)
+})
+</code></pre>
+
+<p>e代表文件夹或者是文件<br />
+其中第二个参数存有e的详细信息，其中存在一个mode，当文件夹时mode为16822 而 文件mode为 33206</p>
+<pre><code>
+fs.readdir('./../html/', function(err, list){
+  list.forEach(function (e, i) {
+    fs.stat(e, function (err, infor) {
+    /*  console.log(e)
+      console.log(infor)*/
+      console.log(infor.mode)
+      switch(infor.mode) {
+        case 33206:
+          console.log('[文件]'+ e);
+        break;
+        default:
+          console.log(1)
+      }
+    })
+  })
+})
+</code></pre>
+
+<h2 id="5-nodejs-web"><a name="user-content-5-nodejs-web" href="#5-nodejs-web" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5 NodeJs Web 开发：</h2>
+<p>注：如果要在浏览器上查看效果，必须要运行nodeJS；</p>
+<h3 id="51"><a name="user-content-51" href="#51" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.1 简介：</h3>
+<p>当用户浏览网页的时候，都经历了以下的过程：</p>
+<ol>
+<li>由用户发送HTTP请求；</li>
+<li>主机接受请求，并对用户的请求进行分析；然后相应的命令或者内容返回到用户的机器；</li>
+<li>由用户的机器接受主机返回的内容，然后执行相应操作，最后显示到界面上；</li>
+</ol>
+<p>总的来说，上网的过程就是客户端与服务端之间的通讯</p>
+<h3 id="52-nodejs-http"><a name="user-content-52-nodejs-http" href="#52-nodejs-http" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.2 NodeJs 中的HTTP模块</h3>
+<p>NodeJs 适用于在服务端处理用户发送的数据；</p>
+<p>首先要了解HTTP模块：</p>
+<h4 id="521-http"><a name="user-content-521-http" href="#521-http" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.2.1 加载http模块</h4>
+<p><code>var http = require ('http')</code></p>
+<h4 id="522-web"><a name="user-content-522-web" href="#522-web" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.2.2 创建web服务器对象</h4>
+<p><code>var server = http.createServer()</code></p>
+<p>接受一个回调函数，当 客户端发送请求的时候触发，相当于server.on(&lsquo;request&rsquo;, fn) 的时候触发；</p>
+<h4 id="523-server"><a name="user-content-523-server" href="#523-server" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.2.3 server对象功能：</h4>
+<p><a href="///D://soft/wamp/www/GitHub/learnNode/1%E5%9F%BA%E7%A1%80/html2/dome1.js">demo1</a></p>
+<ol>
+<li>监听<br />
+<code>server.listen([port], [hostname], [backlog], [callback])</code></li>
+</ol>
+<p>port &ndash; 监听的端口，如果不写会自动分配，其中1-1024 一般都是已经被使用了，所以写入的时候一帮要往大了写；<br />
+hostname &ndash; 主机名(IP/域名)，如果不传，默认监听所有网卡的传输数据；<br />
+backlog &ndash; 链接等待队列的最大长度</p>
+<p>注：<br />
+  1. 一个端口只能被一个程序箭筒，但是一个程序可以监听多个端口；<br />
+  2. 只有调用了<code>server.listen()</code> 服务器才能接受命令</p>
+<ol>
+<li>server.address()<br />
+<code>返回：{ address: '::', family: 'IPv6', port: 54115 }</code></li>
+</ol>
+<p>如果使用的端口已经被占用了，就会返回 error<br />
+<pre><code>events.js:160
+      throw er; // Unhandled 'error' event
+      ^
+</code></pre></p>
+<ol>
+<li>错误处理</li>
+</ol>
+<p><code>server.on('error', function(ev){})</code></p>
+<p>注： 这里的ev存放这错误信息</p>
+<ol>
+<li>成功处理</li>
+</ol>
+<p><code>server.on('listening', function () {})</code></p>
+<ol>
+<li>发生请求</li>
+</ol>
+<p><code>server.on('request', function  () {})</code></p>
+<p>这是监控用户发送的行为，如果用户发送了请求，在服务端返回数据或者命令前，客户端就会不断发送请求，直到接受请求或者请求延时的时间结束；<br />
+在createServer中</p>
+<p>在 request 事件的函数中，存在两个参数</p>
+<p>例如：<br />
+<pre><code>server.on('request', function  (req, res) {
+  console.log(req)
+})
+</code></pre></p>
+<p>req &ndash; 接受客户端的信息，是HTTP对象的实例；<br />
+其中常用的属性有：<br />
+. httpVersion &ndash; 协议版本<br />
+. headers &ndash; 客户端发来的头信息，是一个对象<br />
+. url &ndash; 路径<br />
+. method &ndash; 请求方式 get || post</p>
+<p>res &ndash; 向客户端反馈信息，就由这个参数完成</p>
+<p>其中常用的方法有：<br />
+. res.setTimeout(num) &ndash; 设置延迟时间，默认2分钟，如果请求的时间超出延时时间，就告诉客户端不用在请求了</p>
+<p>. res.write(&lsquo;&rsquo;) &ndash; 写入数据，只接受字符串格式的内容，这里面的会传输给客户端，这里面如果是标签格式的，将会被浏览器解析；</p>
+<p>. res.end() &ndash; 所有写入已经执行结束的标示，当执行到这里的时候，就将write传输给客户端；<br />
+可以接受一个字符串参数，这个参数会调用 write；</p>
+<pre><code>  res.write('&lt;h1&gt;哈哈哈哈&lt;/h1&gt;');
+  res.end('&lt;h2&gt;呜呜呜呜&lt;/h2&gt;')
+</code></pre>
+
+<p><img src="///D://soft/wamp/www/GitHub/learnNode/1%E5%9F%BA%E7%A1%80/img/resEnd.png" alt=""></p>
+<p>. res.setHeader() &ndash; 设置返回的 <strong>自定义</strong> 头信息</p>
+<p>注：<br />
+1. 要将setHeader() 写在 write() 前，不然会报错<br />
+2. 格式：<code>res.setHeader(key, value)</code><br />
+可以在netWork 中查看：<br />
+<img src="///D://soft/wamp/www/GitHub/learnNode/1%E5%9F%BA%E7%A1%80/img/setHeader.png" alt=""></p>
+<p>. res.writeHead(状态码，[详情]，{头信息})<br />
+其中头信息包括content.type属性，用于设置浏览器对write的解析方式；<br />
+例如：<br />
+<code>{'content-type : text/html; charset:utf-8'}</code></p>
+<p>注：<br />
+1. writeHead 必须写在setHead 后面，end前面</p>
+<h4 id="525-url"><a name="user-content-525-url" href="#525-url" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.2.5 URL 处理（路由）</h4>
+<p>由于在url常常这种形式：<br />
+<code>http://localhost:8080/a/b/a.html</code> 指向根目录下的路径，如果不做处理的话就会返回一样的数据；</p>
+<ol>
+<li>url 模块</li>
+</ol>
+<p>1) 请求模块<br />
+<code>var ul = require('ul')</code></p>
+<p>2) 得到路径</p>
+<p>url.parse(req.url)</p>
+<p>返回的是：<br />
+Url {protocol: null,slashes: null,auth: null,host: null,port: null,hostname: null,hash: null,search: null,query: null,pathname: &lsquo;/a/b/a.html&rsquo;,path: &lsquo;/a/b/a.html&rsquo;,href: &lsquo;/a/b/a.html&rsquo; }</p>
+<p>我们选取其中的pathname</p>
+<p>3) 拆分</p>
+<p>请求的方式有两种：1. get 2. post</p>
+<p>get 方式</p></article></body></html>

@@ -9,6 +9,8 @@
 `var buf = new Buffer()`
 >注： buffer 中存在length属性
 > 返回由16进制信息；可以使用`String.fromCharCode()`的方式将其转换
+> 可以使用下标获取，获取的到的是二进制，
+> 如果需要写入，也只能是二进制
 
 [DOME1](././BufferHtml/dome1.html)
 

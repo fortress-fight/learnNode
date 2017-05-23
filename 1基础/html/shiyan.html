@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var a1 = {
+			a: [0,1,3,4,5],
+			b: 1,
+			c: 'name'
+		};
+
+		var a2 = {};
+
+		extend(a2,a1)
+
+		function extend (arr1, arr2) {
+			for (attr in arr2) {
+				if (arr2.hasOwnProperty(attr)) {
+					if (typeof arr2[attr] === 'object') {
+						arr1[attr] = Array.isArray(arr2[attr]) ? [] : {};
+						extend(arr1[attr], arr2[attr])
+					} else {
+						arr1[attr] = arr2[attr]
+					}
+				}
+			}
+		}
+
+		console.log(a1)
+		a2.a = [1];
+		a2.c = '';
+		console.log(a2)
+
+
+	</script>
+</body>
+</html>

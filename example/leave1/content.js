@@ -1,3 +1,7 @@
 function e2 (){alert(1)}
-function e2 (){alert(3)}
+console.log(12321231)
+console.log('xin')
+console.log('xin')
+console.log('xin')
+console.log('xasdfasdin')
 function e2 (){alert(2)}
